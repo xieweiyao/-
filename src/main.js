@@ -29,7 +29,8 @@ var router1 = new vueRouter({
     {path:'/res',component:res}
   ]
   });
-
+//倒入全局中的样式
+import '../statics/css/site.css';
 // 4.0 利用Vue对象进行解析渲染
 new Vue({
   el:'#app',

@@ -1,13 +1,6 @@
-body{
-	background-color: white;
+/*商城背景颜色的修改*/
+body {
+  background-color: #fff;
 }
 
-.router-link-active{
-	color:#007aff;
-}
-
-#tmpl{
-	margin-top: 45px;
-	margin-bottom: 50px;
-}
 
