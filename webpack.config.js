@@ -22,7 +22,7 @@ module.exports={
       }
       ,
        {
-        test: /\.(png|jpg|gif|ttf|svg)$/,  //打包 url请求的资源文件
+        test: /\.(png|jpg|gif|ttf)$/,  //打包 url请求的资源文件
         loader:'url-loader?limit=20000' //limit表示图片的大小为20K是临界值，小于20K的图片均被打包到build.js中去，请求图片就会很快
       },
        {
@@ -33,11 +33,7 @@ module.exports={
        {
         test: /.vue$/,  // 解析 .vue 组件页面文件
         loader:'vue-loader' //
-      },
-       {
-            test: /vue-preview.src.*?js$/,  // vue-preivew组件专用
-            loader: 'babel-loader'
-        }
+      }
   	]
   },
   babel:{
@@ -48,7 +44,7 @@ module.exports={
         new htmlwp({
           title: '首页',  //生成的页面标题<head><title>首页</title></head>
           filename: 'index.html', //webpack-dev-server在内存中生成的文件名称，自动将build注入到这个页面底部，才能实现自动刷新功能
-          template: 'template.html' //根据index1.html这个模板来生成(这个文件请程序员自己生成)
+          template: 'index1.html' //根据index1.html这个模板来生成(这个文件请程序员自己生成)
         })
     ]
 }
