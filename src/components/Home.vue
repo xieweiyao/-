@@ -1,13 +1,38 @@
 <template>
     <div id='tmpl'>
         <!--1.0 利用mint-ui的mt-swipe组件实现轮播图-->
-       
+        <mt-swipe :auto="2000">
+          <mt-swipe-item v-for="item in list">
+          <img :src="item.img"/>
+          </mt-swipe-item>
+          
+        </mt-swipe>
+
+
         <!--2.0 利用MUI的九宫格组件实现实现导航区域-->
     </div>
 </template>
 
 <script>
-// 使用 mint-ui 中的 Toast组件实现弹窗效果
+//静态的获取图片地址
+export default{
+    data(){
+          return{
+             list:[
+                   {
+                    "url":"http://www.itcast.cn/subject/phoneweb/index1.html",
+                    "img":"http://ofv795nmp.bkt.clouddn.com/vuelogobanner1.jpg"
+                   },
+                   {
+                    "url":"http://www.itcast.cn/subject/phoneweb/index.html",
+                    "img":"http://ofv795nmp.bkt.clouddn.com/vuelogobanner2-1.jpg"
+                   }
+             ]
+             }
+        
+    }
+}
+
 
 </script>
 
