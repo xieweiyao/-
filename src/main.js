@@ -10,8 +10,8 @@ import vueRouter from 'vue-router';
 Vue.use(vueRouter);
 
 // 3.0.2 导入路由规则对应的组件对象
-import login from './components/account/login.vue';
-import res from './components/account/register.vue';
+import home from './components/Home.vue';
+import shopcar from './components/shopcar/car.vue';
 
 //倒入mint中的css样式
 import 'mint-ui/lib/style.min.css';
@@ -24,9 +24,10 @@ import '../statics/mui/css/mui.css';
 
 // 3.0.2 定义路由规则
 var router1 = new vueRouter({
+  linkActiveClass:'mui-active',
   routes:[
-    {path:'/login',component:login}, 
-    {path:'/res',component:res}
+    {path:'/home',component:home}, 
+    {path:'/shopcar',component:shopcar}
   ]
   });
 //倒入全局中的样式
