@@ -4,33 +4,62 @@
         <mt-swipe :auto="2000">
           <mt-swipe-item v-for="item in list">
           <img :src="item.img"/>
-          </mt-swipe-item>
-          
+          </mt-swipe-item>         
         </mt-swipe>
-
-
         <!--2.0 利用MUI的九宫格组件实现实现导航区域-->
+        <div class="mui-content">
+                <ul class="mui-table-view mui-grid-view mui-grid-9">
+                    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                            <span class="mui-icon mui-icon-home"></span>
+                            <div class="mui-media-body">新闻资讯</div></a>
+                    </li>
+                    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                            <span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>
+                            <div class="mui-media-body">图片分享</div></a>
+                    </li>
+                    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                            <span class="mui-icon mui-icon-chatbubble"></span>
+                            <div class="mui-media-body">商品购买</div></a>
+                    </li>
+                    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                            <span class="mui-icon mui-icon-location"></span>
+                            <div class="mui-media-body">留言反馈</div></a>
+                    </li>
+                    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                            <span class="mui-icon mui-icon-search"></span>
+                            <div class="mui-media-body">视屏专区</div></a>
+                    </li>
+                    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                            <span class="mui-icon mui-icon-phone"></span>
+                            <div class="mui-media-body">联系我们</div></a>
+                    </li>
+                </ul> 
+        </div>
     </div>
 </template>
 
 <script>
-//静态的获取图片地址
+//动态的添加图片
 export default{
-    data(){
-          return{
-             list:[
-                   {
-                    "url":"http://www.itcast.cn/subject/phoneweb/index1.html",
-                    "img":"http://ofv795nmp.bkt.clouddn.com/vuelogobanner1.jpg"
-                   },
-                   {
-                    "url":"http://www.itcast.cn/subject/phoneweb/index.html",
-                    "img":"http://ofv795nmp.bkt.clouddn.com/vuelogobanner2-1.jpg"
-                   }
-             ]
-             }
-        
-    }
+   data(){
+     return{
+        list:[]
+     }
+   },
+   created(){
+      this.getimgs();
+   },
+   methods:{
+      getimgs(){
+        var url='http://www.lovegf.cn:8899/api/getlunbo';
+        this.$http.get(url).then(function(response){
+         if(response.body.status!=0){
+          alert(response.body.message);
+         }
+         this.list=response.body.message;
+        })
+      }
+   }
 }
 
 

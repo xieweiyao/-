@@ -33,6 +33,9 @@ var router1 = new vueRouter({
 //倒入全局中的样式
 import '../statics/css/site.css';
 // 4.0 利用Vue对象进行解析渲染
+//倒入vue-resource实现ajax请求
+import vueresource from 'vue-resource';
+Vue.use(vueresource);
 new Vue({
   el:'#app',
   // 使用路由对象实例
