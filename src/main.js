@@ -37,6 +37,11 @@ import '../statics/css/site.css';
 // 4.0 利用Vue对象进行解析渲染
 //倒入vue-resource实现ajax请求
 import vueresource from 'vue-resource';
+//定义一个全局时间过滤器
+import moment from 'moment';
+Vue.filter('datefmt',function(input,fmtstring){
+  return moment(input).format(fmtstring);
+})
 Vue.use(vueresource);
 new Vue({
   el:'#app',
