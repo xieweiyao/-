@@ -2,10 +2,10 @@
 <template>
 	<div>
 		<!-- 1.0 template主要是放html元素的（html的页面结构） -->
-		//商城头部开始
+
     <mt-header fixed title="移动商城"></mt-header>
-		//商城头部结束
-		//商城的底部开始
+	
+	
 		<nav class="mui-bar mui-bar-tab">
 			<router-link class="mui-tab-item " to="/home">
 				<span class="mui-icon mui-icon-home"></span>
@@ -16,7 +16,7 @@
 				<span class="mui-tab-label">会员</span>
 			</router-link>
 			<router-link class="mui-tab-item" to="/shopcar">
-				<span class="mui-icon mui-icon-contact"><span class="mui-badge">9</span></span>
+				<span class="mui-icon mui-icon-contact"><span class="mui-badge">0</span></span>
 				<span class="mui-tab-label">购物车</span>
 			</router-link>
 			<router-link class="mui-tab-item" to="/tabbar-with-map">
@@ -24,12 +24,12 @@
 				<span class="mui-tab-label">搜索</span>
 			</router-link>
 		</nav>
-		//商城的底部结束
-
+	
+       <router-view></router-view>
 		
 
 		<!-- 路由占位符 -->
-		<router-view></router-view>
+		
 	</div>
 </template>
 
