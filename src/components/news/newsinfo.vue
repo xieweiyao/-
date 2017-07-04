@@ -10,6 +10,7 @@
 </template>
 <script>
 import {Toast} from 'mint-ui';
+import common from '../../kits/common.js';
 export default{
     data(){
         return {
@@ -24,7 +25,7 @@ export default{
     methods:{
         
         getnewsinfo(){
-            var url='http://www.lovegf.cn:8899/api/getnew/'+this.id;
+            var url=common.apidomain+'/api/getnew/'+this.id;
            this.$http.get(url).then(function(res){
                if(res.body.status!=0){
                    Toast(res.body.message);

@@ -19,7 +19,8 @@
 </template>
 
 <script>
-   import {Toast} from 'mint-ui'
+   import {Toast} from 'mint-ui';
+   import common from '../../kits/common.js';
    export default{
      data(){
         return{
@@ -49,7 +50,7 @@
 
             //     }
             //  ]
-            var url='http://www.lovegf.cn:8899/api/getnewslist';
+            var url=common.apidomain+'/api/getnewslist';
             this.$http.get(url).then(function(res){
                 if(res.body.status!=0){
                     Toast(res.body.message);
