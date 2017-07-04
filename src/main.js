@@ -13,6 +13,7 @@ Vue.use(vueRouter);
 import home from './components/Home.vue';
 import shopcar from './components/shopcar/car.vue';
 import newslist from './components/news/newslist.vue';
+import newsinfo from './components/news/newsinfo.vue';
 
 //倒入mint中的css样式
 import 'mint-ui/lib/style.min.css';
@@ -27,9 +28,10 @@ import '../statics/mui/css/mui.css';
 var router1 = new vueRouter({
   linkActiveClass:'mui-active',
   routes:[
-    {path:'/home',component:home}, 
-    {path:'/shopcar',component:shopcar},
-    {path:'/news/newslist',component:newslist}
+    {path:'/home',component:home}, //主页的组件
+    {path:'/shopcar',component:shopcar},//购物车的组件
+    {path:'/news/newslist',component:newslist},//图文组件
+    {path:'/news/newsinfo/:id',component:newsinfo}
   ]
   });
 //倒入全局中的样式
