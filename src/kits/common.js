@@ -6,5 +6,6 @@
 // }
 // 系统配置公共的域名'
 export default {
-    apidomain:'http://www.lovegf.cn:8899'
+    apidomain:'http://www.lovegf.cn:8899',
+    apido:'http://182.254.146.100:8899'
 }
